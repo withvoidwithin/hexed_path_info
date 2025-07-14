@@ -1,18 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rive Animation</title>
-  <style>
-    body { margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background: #111; }
-    canvas { width: 400px; height: 400px; }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HEXED PATH</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #121212;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        body {
+            overflow: hidden; /* Чтобы не было скролла, если канвас чуть больше */
+        }
+        #viewport {
+            /* Сделать так, чтобы канвас занимал максимум доступного пространства,
+               сохраняя соотношение 16:9 и был по центру */
+            width: 100%;
+            max-width: 100vw;
+            height: auto;
+            max-height: 100vh;
+            aspect-ratio: 16 / 9; /* Современный способ */
+            display: block;
+            background-color: black; /* если нужно, можно добавить фон */
+        }
+    </style>
 </head>
 <body>
-  <canvas id="riveCanvas"></canvas>
-
-  <!-- Подключаем main.js как ES-модуль -->
-  <script type="module" src="js/main.js"></script>
+    <canvas id="viewport" width="1920" height="1080"></canvas>
+    <script src="https://unpkg.com/@rive-app/canvas"></script>
+    <script>
+        const r = new rive.Rive({
+            // src: "https://cdn.rive.app/animations/vehicles.riv",
+            src: "../rive/hexed_path.riv",
+            canvas: document.getElementById("viewport"),
+            autoplay: true,
+            stateMachines: "bumpy",
+        });
+    </script>
 </body>
 </html>
