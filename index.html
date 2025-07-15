@@ -1,46 +1,16 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HEXED PATH</title>
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background-color: #121212;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        body {
-            overflow: hidden; /* Чтобы не было скролла, если канвас чуть больше */
-        }
-        #viewport {
-            /* Сделать так, чтобы канвас занимал максимум доступного пространства,
-               сохраняя соотношение 16:9 и был по центру */
-            width: 100%;
-            max-width: 100vw;
-            height: auto;
-            max-height: 100vh;
-            aspect-ratio: 16 / 9; /* Современный способ */
-            display: block;
-            background-color: black; /* если нужно, можно добавить фон */
-        }
-    </style>
-</head>
-<body>
-    <canvas id="viewport" width="1920" height="1080"></canvas>
+    <link rel="stylesheet" href="styles/fonts.css" />
+    <link rel="stylesheet" href="styles/main.css" />
     <script src="https://unpkg.com/@rive-app/canvas"></script>
-    <script>
-        const r = new rive.Rive({
-            // src: "https://cdn.rive.app/animations/vehicles.riv",
-            src: "rive/hexed_path.riv",
-            canvas: document.getElementById("viewport"),
-            autoplay: true,
-            stateMachines: "bumpy",
-        });
-    </script>
-</body>
+    <script src="scripts/main.js" defer></script>
+  </head>
+  <body>
+    <h1 id="LoadingTitle">Loading</h1>
+    <canvas id="background" width="1920" height="1080"></canvas>
+  </body>
 </html>

@@ -1,0 +1,32 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #151416;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* ⬅️ Убирает скролл */
+}
+
+#LoadingTitle {
+  position: absolute;
+  color: rgb(231, 225, 255);
+  font-family: "Reaver";
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+#background {
+  position: absolute;
+  /* top: 50%; */
+  /* right: 0; */
+  /* transform: translateY(-50%); */
+
+  min-width: 100vw;
+  min-height: 100vh;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+}
