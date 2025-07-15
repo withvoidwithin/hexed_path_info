@@ -1,16 +1,20 @@
-function InitPage() {
-  InitComponents();
+const PanelBackground = document.getElementById("Background");
+const PanelLoadignTitle = document.getElementById("LoadingTitle");
+const PanelContent = document.getElementById("Content");
 
-  document.getElementById("LoadingTitle").style.display = false;
+function OnBackgroundLoaded() {
+  PanelLoadignTitle.style.display = false;
+  PanelContent.classList.remove("IsHidden");
 }
 
 function InitComponents() {
   const r = new rive.Rive({
     src: "assets/background.riv",
-    canvas: document.getElementById("background"),
+    canvas: PanelBackground,
     autoplay: true,
     stateMachines: "IDLE",
+    onLoad: OnBackgroundLoaded,
   });
 }
 
-window.addEventListener("DOMContentLoaded", InitComponents);
+InitComponents();
