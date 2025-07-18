@@ -40,6 +40,8 @@ a {
 }
 
 #Content {
+  width: 80vw;
+  max-width: 900px;
   z-index: 1;
   display: flex;
   flex-direction: column;
@@ -50,12 +52,13 @@ a {
   }
 
   > #GameLogo {
-    width: 64vw;
-    max-width: 640px;
+    width: 48vw;
+    max-width: 360px;
+    margin-bottom: 96px;
   }
 
   > #GameDescription {
-    max-width: 64vw;
+    max-width: 520px;
     font-weight: semi-bold;
     font-size: 18px;
     text-align: center;
